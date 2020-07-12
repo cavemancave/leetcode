@@ -15,10 +15,12 @@ brew install gdb #安装gdb
   5. 切到debug视图，编辑创建默认launch.json
   6. launch.json里增加前置任务填task名称 `"preLaunchTask": "C/C++: clang build active file"`
   7. 设置json->修改自动化格式为google:`"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",`
-
+  8. task.json 增加ASAN检测内存错误`"-fsanitize=address",`
 # 动态规划
 ## 理论和示例
 
 
 ## 相关题目
-62 不同路径
+62 不同路径  
+
+
