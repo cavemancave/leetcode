@@ -3,14 +3,13 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "C/C++: clang build active file",
-			"command": "/usr/bin/clang",
+			"label": "C/C++: gcc build active file",
+			"command": "/usr/bin/gcc",
 			"args": [
-				"-fsanitize=address",
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/a.out"
+				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -18,7 +17,10 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": "build"
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
