@@ -25,7 +25,7 @@ brew install gdb #安装gdb
   建议linux使用gdb调试，lldb-mi现在不跟随发布了，需要单独编译安装；
   1. task.json 增加ASAN检测内存错误`"-fsanitize=address",`
   1. 使用mac调试时，asan的结果在debug console中，记得打开设置边上一个带虫的图标
-
+  1. 内存泄漏无法和gdb配合，可以手动执行打印报告`./a.out`
   
 # 动态规划
 ## 理论和示例
