@@ -47,7 +47,12 @@ int main()
     B.name = 'B';
     C.name = 'C';
     int a[10] = {0};
-    a[-1] = 0; 
+    
+    //a[-1] = 0; 
+   // a[101] = 0;
+    int* p = (int*)malloc(100*sizeof(int));
+    p[102] = 1;
+
     hannuota(n, &A, &B, &C);
 
     return 0;
