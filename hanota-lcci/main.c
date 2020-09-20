@@ -46,6 +46,8 @@ int main()
     A.name = 'A';
     B.name = 'B';
     C.name = 'C';
+    int a[10] = {0};
+    a[-1] = 0; 
     hannuota(n, &A, &B, &C);
 
     return 0;

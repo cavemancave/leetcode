@@ -16,6 +16,9 @@ brew install gdb #安装gdb
   6. launch.json里增加前置任务填task名称 `"preLaunchTask": "C/C++: clang build active file"`
   7. 设置json->修改自动化格式为google:`"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",`
   8. task.json 增加ASAN检测内存错误`"-fsanitize=address",`
+  9. 安装remote development插件
+  10. linux安装gcc和gdb，连接到vm调试
+  
 # 动态规划
 ## 理论和示例
 
