@@ -7,6 +7,9 @@ chsh -s /bin/zsh #切换成zsh
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)" #下载homebrew
 brew install gdb #安装gdb
 ```
+1. ubuntu下载太慢
+软件和更新-》下载源-》其他-》Select best server-》我选的ftp.sjtu.edu.cn
+
 2. 安装vscode
   1. 安装c++插件，
   2. 面板搜索`shell`安装到bin
@@ -25,7 +28,7 @@ brew install gdb #安装gdb
   建议linux使用gdb调试，lldb-mi现在不跟随发布了，需要单独编译安装；
   1. task.json 增加ASAN检测内存错误`"-fsanitize=address",`
   1. 使用mac调试时，asan的结果在debug console中，记得打开设置边上一个带虫的图标
-  1. 内存泄漏无法和gdb配合，可以手动执行打印报告`./a.out`
+  1. linxu上内存泄漏无法和gdb配合，可以手动执行`./a.out`来打印检测报告；无论有无内存泄露都会打印`==1804==LeakSanitizer has encountered a fatal error.`，主要看Debug Console中进程是否以1退出，0代表没有泄露。
   
 # 动态规划
 ## 理论和示例
