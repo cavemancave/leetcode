@@ -54,6 +54,8 @@ int main(void){
     for(int i=0;i<CSize;i++){
         printf("%d,", C[i]);
     }
+    int a[100] = {0};
+    printf("%d", a[101]);
     free(C);
     return 0;
 }
