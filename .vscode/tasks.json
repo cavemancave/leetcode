@@ -41,6 +41,21 @@
 				"$gcc"
 			],
 			"group": "build"
-		}
+		},
+		{
+            "type": "shell",
+            "label": "windows g++",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\a.out"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
 	]
 }
