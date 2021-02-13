@@ -1,13 +1,15 @@
-# 初始操作
-vmware15Player Ubuntu20.0.4 
-最小化安装
-software 更新，选择其他软件源，选择最快的安装源
-sudo apt-get install open-vm-tools-desktop -y #安装vmware工具
-sudo apt install openssh-service -y #安装ssh服务端
-sudo systemctl start sshd 
-sudo systemctl enable sshd 
-然后就可以用其他喜欢的终端登录了
-ssh-copy-id root@192.168.0.3 #免密登陆
+主要工作环境是Windows 10，本地安装ubuntu虚拟机，使用vscode远程开发调试
+# 本地安装ubuntu虚拟机
+1. 下载Ubuntu Server 20.0.4镜像，注意不是Desktop版
+2. 使能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
+3. 设置免密登录，然后退回到windows使用git bash登录
+ssh-copy-id taishan@192.168.0.3
+4. 安装apt-smart来更换apt源
+5. 更换apt源来优化apt速度，更新系统
+6. windows设置ssh-agent使能，避免去git网站新添加秘钥，我创建的是.profile，（不建议.bashrc，创建后还会再额外创建其他profile文件）。
+[Using SSH agent forwarding
+](https://docs.github.com/en/developers/overview/using-ssh-agent-forwarding)
+[auto-launching-ssh-agent-on-git-for-windows](https://docs.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)
 
 # 安装编译软件
 sudo apt upgrade
@@ -16,9 +18,6 @@ sudo apt install --fix-broken --fix-missing
 sudo apt autoremove
 
 # 配置git
-ssh-keygen -t rsa 
-cat ~/.ssh/id_rsa.pub 
-网站添加公钥
 git clone git@github.com:cavemancave/leetcode.git
 git config --global user.email "948238104@qq.com"
 git config --global user.name "cavemancave"

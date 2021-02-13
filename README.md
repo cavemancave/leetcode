@@ -7,8 +7,7 @@ chsh -s /bin/zsh #切换成zsh
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)" #下载homebrew
 brew install gdb #安装gdb
 ```
-1. ubuntu下载太慢
-软件和更新-》下载源-》其他-》Select best server-》我选的ftp.sjtu.edu.cn
+1. [ubuntu server 20.04](00_environment/environment_ubuntu.md)
 
 2. 安装vscode
   1. 安装c++插件，
