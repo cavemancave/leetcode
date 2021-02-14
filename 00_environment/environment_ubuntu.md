@@ -1,24 +1,33 @@
 主要工作环境是Windows 10，本地安装ubuntu虚拟机，使用vscode远程开发调试
 # 本地安装ubuntu虚拟机
 1. 下载Ubuntu Server 20.0.4镜像，注意不是Desktop版
-2. 使能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
+2. 使---能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
 3. 使能ssh-agent，避免去git网站新添加秘钥
-管理员权限打开power shell，输入下面命令
+3.1 windows
+ - 设置->应用->可选功能->添加功能-> OpenSSH客户端
+ - 管理员权限打开power shell，输入下面命令
 ```cmd
-# 如果ssh命令可以敲出来，就不用安装
-Install-Module -Force OpenSSHUtils -Scope AllUsers
-#设置开机自动启动
-Set-Service ssh-agent -StartupType Automatic 
+#启动ssh-agent
 Start-Service ssh-agent
 Get-Service ssh-agent
 #添加秘钥
-ssh-add ~\.ssh\id_rsa
+ssh-add ~\.ssh\id_ed25519
 ssh-add -l
-#测试，warning可以忽略
+#测试
 ssh -T git@github.com
+#设置开机自动启动
+Set-Service ssh-agent -StartupType Automatic 
 ```
+3.2 设置~/.ssh/config
+```txt
+Host *
+  ForwardAgent yes
+```
+3.3 git bash中使能ssh-agent
+修改~/.ssh/.profile
+
 4. 设置免密登录
-ssh-copy-id taishan@192.168.0.22
+ssh-copy-id -i ~/.ssh/id_ed25519 taishan@192.168.0.22
 ssh 192.168.0.22
 
 # 安装编译软件
