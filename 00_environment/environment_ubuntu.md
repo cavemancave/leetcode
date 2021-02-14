@@ -3,9 +3,9 @@
 1. 下载Ubuntu Server 20.0.4镜像，注意不是Desktop版
 2. 使---能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
 3. 使能ssh-agent，避免去git网站新添加秘钥
-3.1 windows
- - 设置->应用->可选功能->添加功能-> OpenSSH客户端
- - 管理员权限打开power shell，输入下面命令
+ 3.1 windows
+  - 设置->应用->可选功能->添加功能-> OpenSSH客户端
+  - 管理员权限打开power shell，输入下面命令
 ```cmd
 #启动ssh-agent
 Start-Service ssh-agent
@@ -25,10 +25,11 @@ Host *
 ```
 3.3 git bash中使能ssh-agent
 修改~/.ssh/.profile
-
 4. 设置免密登录
+```bash
 ssh-copy-id -i ~/.ssh/id_ed25519 taishan@192.168.0.22
 ssh 192.168.0.22
+```
 
 # 安装编译软件
 1. 安装apt-smart来更换apt源
