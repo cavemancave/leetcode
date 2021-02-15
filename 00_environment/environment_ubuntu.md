@@ -1,11 +1,11 @@
-主要工作环境是Windows 10，本地安装ubuntu虚拟机，使用vscode远程开发调试
-# 本地安装ubuntu虚拟机
+主要工作环境是Windows 10，本地安装ubuntu server虚拟机，使用vscode远程开发调试
+# 本地配置
 1. 下载Ubuntu Server 20.0.4镜像，注意不是Desktop版
-2. 使---能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
+2. 使能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
 3. 使能ssh-agent，避免去git网站新添加秘钥  
- 3.1 windows
-  - 设置->应用->可选功能->添加功能-> OpenSSH客户端
-  - 管理员权限打开power shell，输入下面命令
+3.1 windows
+ - 设置->应用->可选功能->添加功能-> OpenSSH客户端
+ - 管理员权限打开power shell，输入下面命令
 ```cmd
 #启动ssh-agent
 Start-Service ssh-agent
@@ -24,14 +24,23 @@ Host *
   ForwardAgent yes
 ```
 3.3 git bash中使能ssh-agent  
-修改~/.ssh/.profile
+修改~/.ssh/.profile每次自动启动或者手动启动
+```bash
+eval `ssh-agent -s`
+```
 4. 设置免密登录
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519 taishan@192.168.0.22
 ssh 192.168.0.22
 ```
 
-# 安装编译软件
+# 服务端配置
+## 配置git
+git clone git@github.com:cavemancave/leetcode.git
+git config --global user.email "948238104@qq.com"
+git config --global user.name "cavemancave"
+
+## 安装编译软件
 1. 安装apt-smart来更换apt源
 2. 更新系统
 sudo apt upgrade
@@ -40,12 +49,7 @@ sudo apt install wget curl gdb g++ gcc lldb llvm git cmake clang libclang-dev li
 sudo apt install --fix-broken --fix-missing
 sudo apt autoremove
 
-# 配置git
-git clone git@github.com:cavemancave/leetcode.git
-git config --global user.email "948238104@qq.com"
-git config --global user.name "cavemancave"
-
-# 编译lldb-mi
+## 编译lldb-mi
 ```bash
 git clone https://g.ioiox.com/https://github.com/lldb-tools/lldb-mi.git 
 cd lldb-mi
@@ -62,3 +66,4 @@ sudo ln -s lldb-server-10 lldb-server-10.0.0
 ```
 
 # vscode安装Remote-SSH插件远程调试
+
