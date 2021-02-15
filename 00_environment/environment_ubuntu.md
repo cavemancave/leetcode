@@ -51,17 +51,20 @@ sudo apt autoremove
 
 ## 编译lldb-mi
 ```bash
-git clone https://g.ioiox.com/https://github.com/lldb-tools/lldb-mi.git 
+git clone git@github.com:lldb-tools/lldb-mi.git
 cd lldb-mi
 cmake .  #预构建
 vi /home/taishan/lldb-mi/CMakeFiles/CMakeError.log #查看错误日志,提示缺少signpost.h
 cmake --build . #忽略错误，直接构建
 find ./ -name lldb-mi #查找构建结果
-#将构建结果拷贝到/usr/bin，/usr/bin/lldb-mi已经存在，但是不存在链接目标，直接拷贝成目标
-sudo cp ~/lldb-mi/src/lldb-mi /usr/bin/lldb-mi-10
+sudo cp src/lldb-mi /usr/bin
+
+# launch.json中"stopAtEntry"改为true,DEBUG CONSOLE窗口可以看见无法启动的错误，发现vscode只使用lldb-mi-10.0.0和lldb-server-10.0.0，所以创建软连接
+#ERROR: Unable to start debugging. Unexpected LLDB output from command "-exec-run". process launch failed: unable to locate lldb-server-10.0.0
 # vscode只使用lldb-mi-10.0.0
+cd /usr/bin
+sudo cp lldb-mi lldb-mi-10
 sudo ln -s lldb-mi-10 lldb-mi-10.0.0
-# 如果没有lldb-server-10.0.0，也要创建
 sudo ln -s lldb-server-10 lldb-server-10.0.0
 ```
 

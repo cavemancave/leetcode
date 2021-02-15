@@ -27,8 +27,10 @@ Address 0x7fff3362f82c is located in stack of thread T0 at offset 76 in frame
 
 int main(void){
   int a[10] = {0};
-
-  a[11] = 1;
+  for(int i=0;i<12;i++){
+    a[i] = 1;
+  }
+  
   return 0;
 
 
