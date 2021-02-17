@@ -35,19 +35,21 @@ ssh 192.168.0.22
 
 # 服务端配置
 ## 配置git
+```bash
 git clone git@github.com:cavemancave/leetcode.git
 git config --global user.email "948238104@qq.com"
 git config --global user.name "cavemancave"
-
+```
 ## 安装编译软件
 1. 安装apt-smart来更换apt源
-2. 更新系统
-sudo apt upgrade
+2. 更新系统  
+`sudo apt upgrade`
 3. 安装编译软件
+```bash
 sudo apt install wget curl gdb g++ gcc lldb llvm git cmake clang libclang-dev liblldb-dev build-essential vsftpd -y
 sudo apt install --fix-broken --fix-missing
 sudo apt autoremove
-
+```
 ## 编译lldb-mi
 ```bash
 git clone git@github.com:lldb-tools/lldb-mi.git
