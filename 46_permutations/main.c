@@ -1,64 +1,59 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<stdbool.h>
 
-
-
-int* res[100]= {0};
+//https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
+#define LEN 2000
 int resNum=0;
-typedef struct {
-    int* data;
-    int len;
-}myVector;
-
-int* input = NULL;
-int inputNum = 0;
-void backtrack(myVector path, int* selectList){
-
-    if (path.len == inputNum){
-        int* resultRow = (int*)malloc(inputNum*sizeof(int));
-        memcpy(path.data, resultRow, inputNum*sizeof(int));
-        res[resNum++] = resultRow;
+int pathI = 0;
+int len = 0;
+void AddResult(int **result, int* path){
+    int* tmpNums=(int*)malloc(len*sizeof(int));
+    memcpy(tmpNums, path, len*sizeof(int));
+    result[resNum++] = tmpNums;
+}
+void dfs(int* nums, int depth, int* path, bool* used, int** res){
+    if(depth == len){
+        AddResult(res, path);
         return;
     }
-         
-    for(int i=0;i<inputNum;i++){
-        if(selectList[i] == 1)
-            continue;
-        selectList[i] = 1;
-        path.data[path.len++] = input[i];
-        
-        backtrack(path,selectList);
 
-        selectList[i] = 0;
-        path.len--;
+    for(int i=0;i<len;i++){
+        if(!used[i]){
+            used[i] = 1;
+            path[pathI++] = nums[i];
+
+            dfs(nums, depth +1, path, used, res);
+
+            pathI--;
+            used[i] = 0;
+        }
     }
 }
-
 /**
  * Return an array of arrays of size *returnSize.
  * The sizes of the arrays are returned as *returnColumnSizes array.
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
-    input = nums;
-    inputNum = numsSize;
+    resNum = 0;
+    pathI = 0;
+    len = numsSize;
+    int path[LEN] = {0};
+    int* res[LEN]= {0};
+    bool used[LEN] = {0};
 
-    myVector path = {0};
-    path.data = (int*)malloc(numsSize*sizeof(int));
-    int* selectList = (int*)malloc(numsSize*sizeof(int));
-    memset(selectList, 0, numsSize*sizeof(int));
-    backtrack(path, selectList);
+    dfs(nums, 0, path, used, res);
+    
+    int** result = (int**)malloc(LEN*sizeof(int*));
+    memcpy(result, res, resNum*sizeof(int*));
 
-    int** result = (int**)malloc(resNum*sizeof(int*));
-    int* resultColSize = (int*)malloc(resNum*sizeof(int));
-    for(int i=0;i<numsSize;i++){
-        result[i] = res[i];
-        resultColSize[i] = numsSize;
+    (*returnColumnSizes) = (int*)malloc(resNum*sizeof(int));
+    for(int i=0;i<resNum;i++){
+        (*returnColumnSizes)[i] = numsSize;
     }
-    *returnColumnSizes = resultColSize;
     *returnSize = resNum;
-    free(selectList);
     return result;
 }
 
