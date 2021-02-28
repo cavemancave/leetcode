@@ -3,6 +3,28 @@
 # 环境搭建
 [调试环境优化](00_environment/environment_prepare.md)
 
+# 基础函数
+qsort()
+```c
+
+
+struct Student 
+{ 
+    int age, marks; 
+    char name[20]; 
+};
+
+int comparator(const void *p, const void *q)  
+{ 
+    int l = ((struct Student *)p)->marks; 
+    int r = ((struct Student *)q)->marks;  
+    return (l - r); 
+} 
+
+qsort((void*)arr, arrSize, sizeof(arr[0]), comparator); 
+
+```
+
 # 动态规划
 ## 理论和示例
 
@@ -60,4 +82,6 @@ def backtrack(路径，选择列表):
     做选择
     backtrack(路径，选择列表)
     撤销选择
+46, 47,
+
 
