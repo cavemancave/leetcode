@@ -28,6 +28,7 @@
 			"label": "C/C++: clang build active file",
 			"command": "/usr/bin/clang",
 			"args": [
+				"-D __XGH_TEST__",
 				"-fsanitize=address",
 				"-g",
 				"${file}",

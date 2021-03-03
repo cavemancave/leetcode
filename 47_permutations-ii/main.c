@@ -64,6 +64,7 @@ int** permuteUnique(int* nums, int numsSize, int* returnSize, int** returnColumn
     return res;
 }
 
+#ifdef __XGH_TEST__
 int main(void){
     int nums[] = {1,2,3};
     int returnSize = 0;
@@ -82,7 +83,7 @@ int main(void){
     free(returnColumnSizes);
     return 0;
 }
-
+#endif
 
 //要先排序
 //本次的数和上次一致，并且上次已释放
