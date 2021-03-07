@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(lldb) Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "miDebuggerPath": "/usr/bin/lldb-mi" ,
+            "preLaunchTask": "C/C++: clang build active file"
+        },
+        {
             "name": "windows gdb",
             "type": "cppdbg",
             "request": "launch",
@@ -46,19 +60,6 @@
             "preLaunchTask": "C/C++: gcc build active file",
   //          "miDebuggerPath": "/usr/bin/gdb"
         },
-        {
-            "name": "(lldb) Build and debug active file",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}/a.out",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "miDebuggerPath": "/usr/bin/lldb-mi" ,
-            "preLaunchTask": "C/C++: clang build active file"
-        }
+
     ]
 }

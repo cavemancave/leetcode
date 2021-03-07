@@ -3,6 +3,25 @@
 	"tasks": [
 		{
 			"type": "shell",
+			"label": "C/C++: clang build active file",
+			"command": "/usr/bin/clang",
+			"args": [
+				"-fsanitize=address",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/a.out"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
 			"label": "C/C++: gcc build active file",
 			"command": "/usr/bin/gcc",
 			"args": [
@@ -22,26 +41,6 @@
 				"kind": "build",
 				"isDefault": true
 			}
-		},
-		{
-			"type": "shell",
-			"label": "C/C++: clang build active file",
-			"command": "/usr/bin/clang",
-			"args": [
-				"-D __XGH_TEST__",
-				"-fsanitize=address",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/a.out"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
 		},
 		{
             "type": "shell",
