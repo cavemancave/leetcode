@@ -70,4 +70,8 @@ sudo ln -s lldb-server-10 lldb-server-10.0.0
 ```
 
 # vscode安装Remote-SSH插件远程调试
+我一般有2种运行方式：
+1. `ctrl+shift+b` 编译，再TERMINAL窗口直接运行`./a.out`
+2. 直接F5开始运行，切换到DEBUG窗口看输出
 
+如果发现停在没有断点的地方，清理一下所有的断点：  `Run->Remove all breakpoints`
