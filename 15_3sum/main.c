@@ -44,10 +44,10 @@ int **threeSumInner(int *nums, int numsSize, int *returnSize, int **returnColumn
                 addRes(res, returnSize, nums[i], nums[L], nums[R]);
                 while (L < R && nums[L] == nums[L + 1])
                     L++;
-                while (L < R && nums[R] == nums[R + 1])
-                    R++;
+                while (L < R && nums[R] == nums[R - 1])
+                    R--;
                 L++;
-                R++;
+                R--;
             }
             else if (sum > 0)
             {
