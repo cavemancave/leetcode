@@ -48,8 +48,10 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
                 L++;
                 R--;
             }else if(sum < 0){
+                while(L<R && nums[L]==nums[L+1] ) L++;
                 L++;
             }else{
+                while(L<R && nums[R]==nums[R-1]) R--;
                 R--;
             }
         }
@@ -59,7 +61,7 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
 int main()
 {
 
-    int nums[] = {-1, 0, 1, 2, -1, -4};
+    int nums[] = {0,0,0,5};
     int numsSize = sizeof(nums) / sizeof(int);
     int returnSize = 0;
     int *returnColumnSizes;
