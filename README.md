@@ -3,6 +3,10 @@
 # 环境搭建
 [调试环境优化](00_environment/environment_prepare.md)
 
+# UThash
+`sudo apt install uthash-dev`
+uthashTest/main.c
+
 # 基础函数
 qsort()
 ```c
@@ -96,3 +100,12 @@ def backtrack(路径，选择列表):
 75. 颜色分类
 209. 长度最小的子数组
 80. 删除排序数组中的重复项 II
+
+## 九阴真经第一式 单调栈
+84 柱状图中的最大矩形
+739 每日温度
+503 下一个更大元素II
+85 最大矩形
+42 接雨水（困难，性能敏感）
+901 股票价格跨度
+239 滑动窗口最大值（困难，O(n))
