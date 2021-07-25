@@ -1,3 +1,4 @@
+[toc]
 # 本地配置
 1. 下载Ubuntu Server 20.0.4镜像，注意不是Desktop版
 2. 使能HyperV，第二代，安装Ubuntu Server 20.0.4，注意安全启动选Windows UEFI证书颁发机构；用户名建议和windows一致，这样后面可以少输用户名
@@ -42,8 +43,7 @@ git config --global user.name "cavemancave"
 ```
 ## 安装编译软件
 1. 安装apt-smart来更换apt源
-2. 更新系统  
-`sudo apt upgrade`
+2. 更新系统  `sudo apt upgrade`
 3. 安装编译软件
 ```bash
 sudo apt install wget curl gdb g++ gcc lldb llvm git cmake clang libclang-dev liblldb-dev build-essential vsftpd -y

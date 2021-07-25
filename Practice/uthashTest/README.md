@@ -1,4 +1,4 @@
-[](https://troydhanson.github.io/uthash/userguide.html)
+[uthash User Guide](https://troydhanson.github.io/uthash/userguide.html)
 
 ## 安装
 下载uthash.h 放到源码同目录
