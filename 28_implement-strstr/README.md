@@ -22,7 +22,11 @@ int strStr(char * haystack, char * needle){
 }
 ```
 2. KMP
-建议先看[宫水三叶](https://leetcode-cn.com/problems/implement-strstr/solution/shua-chuan-lc-shuang-bai-po-su-jie-fa-km-tb86/)的讲解，再看carl的代码，因为宫水最后的代码在数组前面补零了，和前面的讲解不符合。
+原理入门：[字符串匹配的KMP算法- 阮一峰的网络日志 - 阮一峰的个人网站](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
+题解先看：[宫水三叶](https://leetcode-cn.com/problems/implement-strstr/solution/shua-chuan-lc-shuang-bai-po-su-jie-fa-km-tb86/)的讲解，但是第4节的代码，参考其他，因为因为宫水最后的代码在数组前面补零了，和前面的讲解不符合。
+代码看：[如何更好地理解和掌握 KMP 算法? - 阮行止的回答 - 知乎](https://www.zhihu.com/question/21923021/answer/1032665486)  快速求next数组 小节
+`串A和串B是相同的！B的后缀等于A的后缀！因此，使得A的k-前缀等于B的k-后缀的最大的k，其实就是串A的最长公共前后缀的长度 —— next[now-1]！`
+
 
 ```c
 
