@@ -46,7 +46,7 @@ int strStr(char * haystack, char * needle){
     free(next);
     return -1;
 }
-
+/*
 int main(void){
     char S[] = "mississippi";
     char T[] = "issip";
@@ -59,3 +59,4 @@ int main(void){
     }
     return 0;
 }
+*/
