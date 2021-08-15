@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "functional": "c",
-        "uthash.h": "c"
+        "uthash.h": "c",
+        "gtest.h": "c"
     }
 }
