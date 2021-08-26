@@ -122,6 +122,26 @@ def backtrack(路径，选择列表):
 
 
 
+
+单调栈	https://leetcode-cn.com/problems/next-greater-element-ii/
+单调栈	https://leetcode-cn.com/problems/online-stock-span/
+滑动窗口	https://leetcode-cn.com/problems/max-consecutive-ones-iii/
+滑动窗口	https://leetcode-cn.com/problems/minimum-size-subarray-sum/
+bfs	https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
+bfs	https://leetcode-cn.com/problems/surrounded-regions/
+dfs	https://leetcode-cn.com/problems/shortest-bridge/solution/
+回溯算法	https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+差分	https://leetcode-cn.com/problems/car-pooling/
+排序	https://leetcode-cn.com/problems/maximum-number-of-events-that-can-be-attended/
+设计+uthash	https://leetcode-cn.com/problems/design-authentication-manager/
+设计+uthash	https://leetcode-cn.com/problems/design-underground-system/
+![image](https://user-images.githubusercontent.com/19219206/130917561-491337b3-a326-4694-b300-88fefb8916d8.png)
+
+
+
+
+
+
 ## 	
 
 [1]: http://slashdot.org
