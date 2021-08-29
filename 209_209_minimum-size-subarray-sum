@@ -1,0 +1,52 @@
+
+
+```c
+
+int myMin(int a, int b)
+{
+    return (a)>(b)?(b):(a);
+}
+int minSubArrayLen(int target, int* nums, int numsSize){
+    int left = 0;
+    int right = 0;
+    int ret = INT_MAX;
+    int sum = 0;
+    while(right<numsSize){
+        sum+=nums[right];
+        while(sum>=target){
+            sum-=nums[left];
+            if(sum<target){
+                ret = myMin(ret, right-left+1);
+            }
+            left++;
+        }
+        right++;
+    }
+    if(ret == INT_MAX){
+        return 0;
+    }
+    return ret;
+}
+```
+
+```c
+TEST(project, add1)
+{
+    int nums[] = {2,3,1,2,4,3};
+    double res = minSubArrayLen(7, nums, sizeof(nums)/sizeof(int));
+    ASSERT_EQ(res, 2);
+}
+
+TEST(project, add2)
+{
+    int nums[] = {1,4,4};
+    double res = minSubArrayLen(4, nums, sizeof(nums)/sizeof(int));
+    ASSERT_EQ(res, 1);
+}
+TEST(project, add3)
+{
+    int nums[] = {1,1,1,1,1,1,1,1};
+    double res = minSubArrayLen(11, nums, sizeof(nums)/sizeof(int));
+    ASSERT_EQ(res, 0);
+}
+```

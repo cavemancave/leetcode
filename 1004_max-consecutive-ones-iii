@@ -1,0 +1,51 @@
+代码思路参考  [负雪明烛-分享滑动窗口模板，秒杀滑动窗口问题-力扣](https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/)  
+- 使用 leftleft 和 rightright 两个指针，分别指向滑动窗口的左右边界。
+- rightright 主动右移：rightright 指针每次移动一步。当 A[right]A[right] 为 00，说明滑动窗口内增加了一个 00；
+- leftleft 被动右移：判断此时窗口内 00 的个数，如果超过了 KK，则 leftleft 指针被迫右移，直至窗口内的 00 的个数小于等于 KK 为止。
+- 滑动窗口长度的最大值就是所求。
+
+
+```c
+int myMax(int a, int b)
+{
+    return (a)>(b)?(a):(b);
+}
+int longestOnes(int* nums, int numsSize, int k){
+    int left=0;
+    int right=0;
+    int res = 0;
+    int findK = 0;
+    while(right<numsSize){
+        if(nums[right] == 0){
+            findK ++;
+        }
+        while(findK >k){
+            if(nums[left] == 0){
+                findK--;
+            }
+            left++;
+        }
+        res = myMax((right - left +1),res);
+        right++;
+    }
+    return res;
+}
+
+```
+
+测试代码
+```
+TEST(hw_cstl2_3, add)
+{
+    int nums[] = {1,1,1,0,0,0,1,1,1,1,0};
+    int ret = longestOnes(nums, sizeof(nums)/sizeof(int), 2);
+    ASSERT_EQ(ret, 6);
+}
+
+TEST(hw_cstl2_3, add2)
+{
+    int nums[] = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
+    int ret = longestOnes(nums, sizeof(nums)/sizeof(int), 3);
+    ASSERT_EQ(ret, 10);
+}
+```
