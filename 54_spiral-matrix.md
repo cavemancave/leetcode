@@ -59,17 +59,14 @@ public class Main {
 				list.add(matrix[i][j]);
 			}
 		}
-		if(row%2==1) {
-			if(col %2==1) {
-				list.add(matrix[row/2][col/2]);
-			}else {
+		if(row < col) {
+			if(row%2==1) {
 				for(j=loop;j<=col-1-loop;j++) {
 					list.add(matrix[loop][j]);
 				}
 			}
 		}else {
-			
-			if(col %2==1) {
+			if(col%2==1) {
 				for(i=loop;i<=row-1-loop;i++) {
 					list.add(matrix[i][loop]);
 				}
