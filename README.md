@@ -6,6 +6,11 @@
 # 环境搭建
 [调试环境优化](00_environment/environment_prepare.md)
 
+# 建议
+SUGGESTION:
+When we are trying to approach a problem, we should always start from brute force solution, even though you have been trained by solving a lot of similar problems previously and been able to give a O(N) solution off the top of your head, I still recommend you to start from a brute force solution. This is the only way you can avoid geting stuck in your fixed mindset when you encounter a completely unseen or unfamiliar problem that unfortunately doesn't match any existing pattern in your trained mind.
+https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/2651020/c-solution/
+
 # 使用的基础库
 ## UThash
 1. 安装`sudo apt install uthash-dev`  
@@ -138,6 +143,11 @@ dfs	https://leetcode-cn.com/problems/shortest-bridge/solution/
 
 
 
+leetcode US
+| Id | Title                         | Solution Type | Study Degree |
+|----|-------------------------------|---------------|--------------|
+| 5  | Longest Palindromic Substring | DP            | 50           |
+| 6  |                               |               |              |
 
 
 
