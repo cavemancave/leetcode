@@ -33,20 +33,18 @@ int comparator(const void *p, const void *q)
 qsort((void*)arr, arrSize, sizeof(arr[0]), comparator); 
 ```
 ## 学习教程
+### 代码随想录
+https://programmercarl.com/
+动态规划
 ### labuladong
 [labuladong主页](https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA)  
-
 [我写了套框架，把滑动窗口算法变成了默写题](https://mp.weixin.qq.com/s/ioKXTMZufDECBUwRRp3zaA)  
-
+[回溯算法详解（修订版）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484709&idx=1&sn=1c24a5c41a5a255000532e83f38f2ce4&chksm=9bd7fb2daca0723be888b30345e2c5e64649fc31a00b05c27a0843f349e2dd9363338d0dac61&cur_album_id=1318883740306948097&scene=190#rd)
 
 
 ## 学习日志
 2021-7-25 复习qsort；学习滑动窗口
 [滑动窗口算法解决子串问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484504&idx=1&sn=5ecbab87e42033cc0a62b635cc436977&chksm=9bd7fa50aca07346a3ffa6be6fccc445968c162af9532fa9c6304eaab2e3a1b79a4bbe758c0a&scene=21#wechat_redirect)
-
-# 动态规划
-## 理论和示例
-
 
 ## 相关题目
 62 不同路径  
